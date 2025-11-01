@@ -39,6 +39,55 @@ const Projects = () => {
                 whileInView="animate"
                 viewport={{ once: true }}
             >
+
+                <motion.a href="https://github.com/omar-tarek-abdelfattah/personalPortfolio.git" target="_blank">
+                <motion.div
+                    className="project-card"
+                    variants={fadeInUp}
+                    whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                >
+                    <motion.div
+                        className="project-image"
+                        style={{ backgroundImage: "url('/projects/example.png')" }}
+                        whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                    />
+                    <h3> Personal Portfolio</h3>
+                    <p>
+                        My personal portfolio built mainly with React and Framer Motion.
+
+                        The one you are currently on.
+                    </p>
+                    <div className="project-tech">
+                        <span>React</span>
+                        <span>EmailJs</span>
+                        <span>Framer Motion</span>
+                    </div>
+                </motion.div>
+                </motion.a>
+                <motion.a href="https://github.com/omar-tarek-abdelfattah/KalemnyApp.git" target="_blank">
+                <motion.div
+                    className="project-card"
+                    variants={fadeInUp}
+                    whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                >
+                    <motion.div
+                        className="project-image"
+                        style={{ backgroundImage: "url('/projects/example.png')" }}
+                        whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                    />
+                    <h3> Saraha-like App</h3>
+                    <p>
+                        A modern SaaS platform built with Next.js and OpenAI integration,
+                        featuring real-time AI-powered content generation and analytics.
+                    </p>
+                    <div className="project-tech">
+                        <span>Next.js</span>
+                        <span>OpenAI</span>
+                        <span>TailwindCSS</span>
+                    </div>
+                </motion.div>
+                </motion.a>
+                <motion.a>
                 <motion.div
                     className="project-card"
                     variants={fadeInUp}
@@ -60,56 +109,8 @@ const Projects = () => {
                         <span>TailwindCSS</span>
                     </div>
                 </motion.div>
+                </motion.a>
 
-                <motion.div
-                    className="project-card"
-                    variants={fadeInUp}
-                    whileHover={{ y: -10, transition: { duration: 0.2 } }}
-                >
-                    <motion.div
-                        className="project-image"
-                        style={{
-                            backgroundImage: "url('/projects/example.png')",
-                        }}
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.2 }}
-                    />
-                    <h3>Social Media Dashboard</h3>
-                    <p>
-                        A comprehensive social media management dashboard with analytics,
-                        scheduling, and engagement tracking features.
-                    </p>
-                    <div className="project-tech">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
-                    </div>
-                </motion.div>
-
-                <motion.div
-                    className="project-card"
-                    variants={fadeInUp}
-                    whileHover={{ y: -10, transition: { duration: 0.2 } }}
-                >
-                    <motion.div
-                        className="project-image"
-                        style={{
-                            backgroundImage: "url('/projects/example.png')",
-                        }}
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.2 }}
-                    />
-                    <h3>Productivity Timer</h3>
-                    <p>
-                        A sleek productivity timer application with customizable work
-                        sessions, statistics tracking, and dark mode support.
-                    </p>
-                    <div className="project-tech">
-                        <span>React</span>
-                        <span>TypeScript</span>
-                        <span>TailwindCSS</span>
-                    </div>
-                </motion.div>
             </motion.div>
         </motion.section>
     );

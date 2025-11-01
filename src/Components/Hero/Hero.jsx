@@ -61,24 +61,24 @@ export default function Hero() {
                             }}
                             style={vscDarkPlus} >
                             {`
-        const aboutMe : DevProfile = {
-            codeName:"Omar Tarek",
-            origin:"🌍 mokkatam is my city <3",
-            role:"Fullstack MERN Wizard",
-            stack:{
-                languages:["JavaScript" , "TypeScript" , "Python" , "SQL"],
-                frameworks: ["ReactJs" , "NextJs" , "NodeJs" , "NestJs" , "Tailwind"]
-            },
-            traits:[
-                "pixel-perfectionist",
-                "Inspirational-leader",
-                "API whisperer",
-                "NodeJs Enthusiast"
-            ],
-            missionStatement: 
-                            "Turning ideas into Apps & making your business-dream come true",
-            availability :"Available for hire"
-        };                                                                        
+const aboutMe : DevProfile = {
+    codeName:"Omar Tarek",
+    origin:"🌍 mokkatam is my city <3",
+    role:"Fullstack MERN Wizard",
+    stack:{
+        languages:["JavaScript" , "TypeScript" , "Python" , "SQL"],
+        frameworks: ["ReactJs" , "NextJs" , "NodeJs" , "NestJs" , "Tailwind"]
+    },
+    traits:[
+        "pixel-perfectionist",
+        "Inspirational-leader",
+        "API whisperer",
+        "NodeJs Enthusiast"
+    ],
+    missionStatement: 
+    "Turning ideas into Apps & making your business-dream come true",
+    availability :"Available for hire"
+};                                                                        
         `}
                         </SyntaxHighlighter>
                     </div>

@@ -322,6 +322,21 @@ body {
   position: relative;
 }
 
+.projects::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-color),
+    transparent
+  );
+}
+
 .projects h2 {
   text-align: center;
   font-size: 2.5rem;
@@ -548,14 +563,14 @@ body {
 
 .form-status.error {
   background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.2);
-  color: #f87171;
-}
-
-.footer {
-  text-align: center;
-  padding: 2rem;
-  background: var(--background);
+    background: var(--background);
   color: var(--text-color);
   border-top: 1px solid var(--card-border);
+}
+
+.contact-description {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
 }

@@ -99,6 +99,8 @@ const Contact = () => {
                 Get in Touch
             </motion.h2>
 
+            <motion.p className="contact-description" variants={fadeInUp}>I'm currently looking for new opportunities. My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you! 😁</motion.p>
+
             <motion.div className="contact-content" variants={fadeInUp}>
                 <motion.form className="contact-form"
                 onSubmit={handleSubmit}
