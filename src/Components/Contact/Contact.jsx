@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -30,6 +30,14 @@ const Contact = () => {
         message: "",
     });
 
+    // Initialize EmailJS on component mount
+    useEffect(() => {
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+        if (publicKey) {
+            emailjs.init(publicKey);
+        }
+    }, []);
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({
@@ -41,6 +49,21 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Check if environment variables are set
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+        if (!serviceId || !templateId || !publicKey) {
+            setFormStatus({
+                submitting: false,
+                success: false,
+                error: true,
+                message: "EmailJS configuration is missing. Please check your environment variables.",
+            });
+            return;
+        }
+
         setFormStatus({
             submitting: true,
             success: false,
@@ -49,34 +72,39 @@ const Contact = () => {
         });
 
         try {
-            await emailjs.send(
-                import.meta.env.VITE_EMAILJS_SERVICE_ID,
-                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            const result = await emailjs.send(
+                serviceId,
+                templateId,
                 {
-                    name: formData.name,
-                    email: formData.email,
+                    from_name: formData.name,
+                    from_email: formData.email,
                     message: formData.message,
-                }
+                    reply_to: formData.email,
+                },
+                publicKey
             );
 
-            setFormStatus({
-                submitting: false,
-                success: true,
-                error: false,
-                message: "Message sent successfully!",
-            });
+            if (result.text === "OK") {
+                setFormStatus({
+                    submitting: false,
+                    success: true,
+                    error: false,
+                    message: "Message sent successfully!",
+                });
 
-            setFormData({
-                name: "",
-                email: "",
-                message: "",
-            });
+                setFormData({
+                    name: "",
+                    email: "",
+                    message: "",
+                });
+            }
         } catch (error) {
+            console.error("EmailJS Error:", error);
             setFormStatus({
                 submitting: false,
                 success: false,
                 error: true,
-                message: "Failed to send message. Please try again.",
+                message: error.text || "Failed to send message. Please try again.",
             });
         }
     };
@@ -109,24 +137,27 @@ const Contact = () => {
                         type="text"
                         name="name"
                         placeholder="Your Name..."
+                        value={formData.name}
                         required
                         whileFocus={{ scale: 1.02 }}
-                    onChange={handleInputChange}
+                        onChange={handleInputChange}
                     />
                     <motion.input
                         type="email"
                         name="email"
                         placeholder="Your Email..."
+                        value={formData.email}
                         required
                         whileFocus={{ scale: 1.02 }}
-                    onChange={handleInputChange}
+                        onChange={handleInputChange}
                     />
                     <motion.textarea
                         name="message"
                         placeholder="Your Message..."
+                        value={formData.message}
                         required
                         whileFocus={{ scale: 1.02 }}
-                    onChange={handleInputChange}
+                        onChange={handleInputChange}
                     />
 
                     <motion.button

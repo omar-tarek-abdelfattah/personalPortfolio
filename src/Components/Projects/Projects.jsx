@@ -41,74 +41,101 @@ const Projects = () => {
             >
 
                 <motion.a href="https://github.com/omar-tarek-abdelfattah/personalPortfolio.git" target="_blank">
-                <motion.div
-                    className="project-card"
-                    variants={fadeInUp}
-                    whileHover={{ y: -10, transition: { duration: 0.2 } }}
-                >
                     <motion.div
-                        className="project-image"
-                        style={{ backgroundImage: "url('/projects/example.png')" }}
-                        whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                    />
-                    <h3> Personal Portfolio</h3>
-                    <p>
-                        My personal portfolio built mainly with React and Framer Motion.
+                        className="project-card"
+                        variants={fadeInUp}
+                        whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                    >
+                        <motion.div
+                            className="project-image"
+                            style={{ backgroundImage: "url('/portfolioSS.jpg')" }}
+                            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                        />
+                        <h3> Personal Portfolio</h3>
+                        <p>
+                            This responsive portfolio website, built with React, provides a modern, fast user experience.
 
-                        The one you are currently on.
-                    </p>
-                    <div className="project-tech">
-                        <span>React</span>
-                        <span>EmailJs</span>
-                        <span>Framer Motion</span>
-                    </div>
-                </motion.div>
+                            Navigate projects effortlessly with a dynamic, component-based design.
+
+
+                        </p>
+                        <div className="project-tech">
+                            <span>React</span>
+                            <span>EmailJs</span>
+                            <span>Framer MotionJS</span>
+                        </div>
+                    </motion.div>
                 </motion.a>
                 <motion.a href="https://github.com/omar-tarek-abdelfattah/KalemnyApp.git" target="_blank">
-                <motion.div
-                    className="project-card"
-                    variants={fadeInUp}
-                    whileHover={{ y: -10, transition: { duration: 0.2 } }}
-                >
                     <motion.div
-                        className="project-image"
-                        style={{ backgroundImage: "url('/projects/example.png')" }}
-                        whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                    />
-                    <h3> Saraha-like App</h3>
-                    <p>
-                        A modern SaaS platform built with Next.js and OpenAI integration,
-                        featuring real-time AI-powered content generation and analytics.
-                    </p>
-                    <div className="project-tech">
-                        <span>Next.js</span>
-                        <span>OpenAI</span>
-                        <span>TailwindCSS</span>
-                    </div>
-                </motion.div>
+                        className="project-card"
+                        variants={fadeInUp}
+                        whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                    >
+                        <motion.div
+                            className="project-image"
+                            style={{ backgroundImage: "url('/projects/example.png')" }}
+                            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                        />
+                        <h3> Saraha-like App</h3>
+                        <p>
+                            This Saraha-style app, powered by Node.js, lets users send and receive anonymous messages.
+
+                            Experience fast, secure, and genuine feedback without the pressure of identity.
+                        </p>
+                        <div className="project-tech">
+                            <span>Node.js</span>
+                            <span>JavaScript</span>
+                            <span>Cloudinary</span>
+                        </div>
+                    </motion.div>
                 </motion.a>
-                <motion.a>
-                <motion.div
-                    className="project-card"
-                    variants={fadeInUp}
-                    whileHover={{ y: -10, transition: { duration: 0.2 } }}
-                >
+                <motion.a href="https://github.com/omar-tarek-abdelfattah/SocialMediaApp.git" target="_blank"> 
                     <motion.div
-                        className="project-image"
-                        style={{ backgroundImage: "url('/projects/example.png')" }}
-                        whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                    />
-                    <h3> AI SaaS Platform</h3>
-                    <p>
-                        A modern SaaS platform built with Next.js and OpenAI integration,
-                        featuring real-time AI-powered content generation and analytics.
-                    </p>
-                    <div className="project-tech">
-                        <span>Next.js</span>
-                        <span>OpenAI</span>
-                        <span>TailwindCSS</span>
-                    </div>
-                </motion.div>
+                        className="project-card"
+                        variants={fadeInUp}
+                        whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                    >
+                        <motion.div
+                            className="project-image"
+                            style={{ backgroundImage: "url('/projects/example2.png')" }}
+                            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                        />
+                        <h3> Social media w/ chatting</h3>
+                        <p>
+                            This social media app, built with Node.js and TypeScript, offers seamless interaction.
+                            User posts and media are securely stored and delivered globally using AWS S3.
+                        </p>
+                        <div className="project-tech">
+                            <span>Node.js</span>
+                            <span>TypeScript</span>
+                            <span>Socket.io</span>
+                            <span>AWS S3</span>
+                        </div>
+                    </motion.div>
+                </motion.a>
+                <motion.a href="https://eninbookings.nl" target="_blank"> 
+                    <motion.div
+                        className="project-card"
+                        variants={fadeInUp}
+                        whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                    >
+                        <motion.div
+                            className="project-image"
+                            style={{ backgroundImage: "url('/enin.jpg')" }}
+                            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                        />
+                        <h3> ENIN bookings</h3>
+                        <p>
+                           Worked on a robust frontend for a travel agency like startup. that was a custom mid-level app
+                        </p>
+                        <div className="project-tech">
+                            <span>HTML5 & CSS3</span>
+                            <span>JavaScript</span>
+                            <span>YourHosting</span>
+                            
+                        </div>
+                    </motion.div>
                 </motion.a>
 
             </motion.div>

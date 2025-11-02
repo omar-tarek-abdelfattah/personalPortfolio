@@ -34,6 +34,9 @@ export default function Navbar() {
                     <a href="#about">About</a>
                 </motion.li>
                 <motion.li variants={fadeInUp} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+                    <a href="#skills">Skills</a>
+                </motion.li>
+                <motion.li variants={fadeInUp} whileHover={{ scale: 1.1 }} initial="initial" whileInView="animate" viewport={{ once: true }} whileTap={{ scale: 0.95 }}>
                     <a href="#projects">Projects</a>
                 </motion.li>
                 <motion.li variants={fadeInUp} whileHover={{ scale: 1.1 }} initial="initial" whileInView="animate" viewport={{ once: true }} whileTap={{ scale: 0.95 }}>

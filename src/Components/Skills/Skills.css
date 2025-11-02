@@ -1,5 +1,5 @@
 .skills {
-    padding: 6rem 5%;
+    padding: 6rem 2%;
     background: var(--background);
     position: relative;
 }
@@ -11,12 +11,10 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--accent-color),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            var(--accent-color),
+            transparent);
 }
 
 .skills h2 {
@@ -24,6 +22,53 @@
     font-size: 2.5rem;
     margin-bottom: 3rem;
     color: var(--text-color);
+}
+
+.skills-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.tab-btn {
+    padding: 0.75rem 2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tab-btn:hover {
+    background: var(--card-bg);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg,
+            var(--gradient-start) 0%,
+            var(--gradient-end) 100%);
+    border-color: var(--accent-color);
+    color: white;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+}
+
+.soft-skill-item {
+    flex: 0 1 calc(100% - 1rem) !important;
+}
+
+.soft-skill-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    opacity: 0.9;
+    margin-top: 0.5rem;
 }
 
 .skills-container {
@@ -35,8 +80,9 @@
 }
 
 .skill-item {
-    flex: 1 1 calc(50% - 1rem);
+    flex: 0 1 calc(30% - 1rem);
     min-width: 0;
+    min-height: 120px;
     background: var(--card-bg);
     padding: 1.5rem;
     border-radius: 1rem;
@@ -45,6 +91,9 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .skill-item::before {
@@ -54,11 +103,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        135deg,
-        var(--gradient-start) 0%,
-        var(--gradient-end) 100%
-    );
+    background: linear-gradient(135deg,
+            var(--gradient-start) 0%,
+            var(--gradient-end) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
@@ -107,11 +154,9 @@
 
 .skill-progress-fill {
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        var(--gradient-start) 0%,
-        var(--gradient-end) 100%
-    );
+    background: linear-gradient(90deg,
+            var(--gradient-start) 0%,
+            var(--gradient-end) 100%);
     border-radius: 50px;
     box-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
     position: relative;
@@ -124,12 +169,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
     animation: shimmer 2s infinite;
 }
 
@@ -137,6 +180,7 @@
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translateX(100%);
     }
@@ -154,8 +198,21 @@
         padding: 1.25rem;
     }
 
+    .soft-skill-item {
+        flex: 1 1 100%;
+    }
+
     .skill-name {
         font-size: 1rem;
     }
-}
 
+    .skills-tabs {
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
