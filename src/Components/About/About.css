@@ -246,7 +246,7 @@
     }
 
     .about-description {
-        min-height: 175vh;
+        min-height: 200vh;
         overflow-y: visible;
     }
 }
