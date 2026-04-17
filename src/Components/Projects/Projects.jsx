@@ -138,6 +138,30 @@ const Projects = () => {
                     </motion.div>
                 </motion.a>
 
+                <motion.a href="https://github.com/omar-tarek-abdelfattah/TripGenie" target="_blank"> 
+                    <motion.div
+                        className="project-card"
+                        variants={fadeInUp}
+                        whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                    >
+                        <motion.div
+                            className="project-image"
+                            style={{ backgroundImage: "url('/tripgenie.jpg')" }}
+                            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                        />
+                        <h3> TripGenie App</h3>
+                        <p>
+                           A web app focused on creating AI-assisted itineraries for attractions in Egypt and choosing your own tour guide on the app too.
+                        </p>
+                        <div className="project-tech">
+                            <span>Node.js</span>
+                            <span>TypeScript</span>
+                            <span>Angular</span>
+                            <span>AI Integration</span>
+                        </div>
+                    </motion.div>
+                </motion.a>
+
             </motion.div>
         </motion.section>
     );
