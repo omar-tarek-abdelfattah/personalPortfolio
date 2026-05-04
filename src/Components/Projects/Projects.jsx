@@ -146,7 +146,7 @@ const Projects = () => {
                     >
                         <motion.div
                             className="project-image"
-                            style={{ backgroundImage: "url('/tripgenie.jpg')" }}
+                            style={{ backgroundImage: "url('/projects/TripGenie.jpg')" }}
                             whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                         />
                         <h3> TripGenie App</h3>
@@ -158,6 +158,29 @@ const Projects = () => {
                             <span>TypeScript</span>
                             <span>Angular</span>
                             <span>AI Integration</span>
+                        </div>
+                    </motion.div>
+                </motion.a>
+                <motion.a href="https://system.circlecode.info/" target="_blank"> 
+                    <motion.div
+                        className="project-card"
+                        variants={fadeInUp}
+                        whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                    >
+                        <motion.div
+                            className="project-image"
+                            style={{ backgroundImage: "url('/projects/CircleCode.jpg')" }}
+                            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                        />
+                        <h3> CircleCode Shipping System</h3>
+                        <p>
+                           A web System for shipping companies focused on managing shipments and tracking packages.
+                        </p>
+                        <div className="project-tech">
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>Tanstack Query</span>
+                            <span>ExcelJS</span>
                         </div>
                     </motion.div>
                 </motion.a>

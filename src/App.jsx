@@ -8,6 +8,7 @@ import Hero from './Components/Hero/Hero.jsx'
 import Navbar from './Components/Navbar/Navbar.jsx'
 import Projects from './Components/Projects/Projects.jsx'
 import Skills from './Components/Skills/Skills.jsx'
+import Testimonials from './Components/Testimonials/Testimonials.jsx'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
       <About />
       <Skills />
       <Projects />
+      <Testimonials />
       <Contact />
 
       <Footer />

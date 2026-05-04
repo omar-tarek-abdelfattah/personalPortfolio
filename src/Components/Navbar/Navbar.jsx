@@ -71,6 +71,9 @@ export default function Navbar() {
                     <a href="#projects">Projects</a>
                 </motion.li>
                 <motion.li variants={fadeInUp} whileHover={{ scale: 1.1 }} initial="initial" whileInView="animate" viewport={{ once: true }} whileTap={{ scale: 0.95 }}>
+                    <a href="#testimonials">Testimonials</a>
+                </motion.li>
+                <motion.li variants={fadeInUp} whileHover={{ scale: 1.1 }} initial="initial" whileInView="animate" viewport={{ once: true }} whileTap={{ scale: 0.95 }}>
                     <a href="#contact">Contact</a>
                 </motion.li>
             </motion.ul>
@@ -129,6 +132,13 @@ export default function Navbar() {
                                 onClick={closeMenu}
                             >
                                 <a href="#projects">Projects</a>
+                            </motion.li>
+                            <motion.li 
+                                whileHover={{ x: 10 }} 
+                                whileTap={{ scale: 0.95 }}
+                                onClick={closeMenu}
+                            >
+                                <a href="#testimonials">Testimonials</a>
                             </motion.li>
                             <motion.li 
                                 whileHover={{ x: 10 }} 

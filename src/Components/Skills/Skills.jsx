@@ -1,5 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, FreeMode } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/free-mode';
 import "./Skills.css";
 
 const fadeInUp = {
@@ -24,21 +28,21 @@ const Skills = () => {
     const [activeTab, setActiveTab] = useState("technical");
 
     const skills = [
-        { name: "JavaScript", percentage: 95 },
-        { name: "HTML5 & CSS3", percentage: 99 },
-        { name: "React", percentage: 80 },
-        { name: "Node.js", percentage: 90 },
-        { name: "TypeScript", percentage: 85 },
-        { name: "MongoDB", percentage: 90 },
-        { name: "Express.js", percentage: 95 },
-        { name: "Nest.js", percentage: 70 },
-        { name: "Shopify + AI Integration", percentage: 70 },
-        { name: "Python (currently learning)", percentage: 60 },
-        { name: "Python dataVisualization (currently learning)", percentage: 50 },
-        { name: "AI + ML (currently learning)", percentage: 50 },
-        { name: "AWS", percentage: 50 },
-        { name: "Excel", percentage: 80 },
-        { name: "Canva", percentage: 80 },
+        { name: "JavaScript" },
+        { name: "HTML5 & CSS3" },
+        { name: "React" },
+        { name: "Node.js" },
+        { name: "TypeScript" },
+        { name: "MongoDB" },
+        { name: "Express.js" },
+        { name: "Nest.js" },
+        { name: "Shopify + AI Integration" },
+        { name: "Python (currently learning)" },
+        { name: "Python dataVisualization (currently learning)" },
+        { name: "AI + ML (currently learning)" },
+        { name: "AWS" },
+        { name: "Excel" },
+        { name: "Canva" },
     ];
     const softSkills = [
         { name: "Leadership", experience: "In Threedos i had alot of experiences where i got to work on my leadership skills, as i was a team leader in the conference of my first season. and the frontend council's head where i lead a team of 4 instructors" },
@@ -84,44 +88,40 @@ const Skills = () => {
             {activeTab === "technical" ? (
                 <motion.div
                     ref={ref}
-                    className="skills-container"
-                    // variants={staggerContainer}
+                    className="skills-container slider-container"
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
                 >
-                    {skills.map((skill, index) => (
-                        <motion.div
-                            key={skill.name}
-                            className="skill-item"
-                            // variants={fadeInUp}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, ease: "easeInOut" }}
-                            whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                        >
-                            <div className="skill-header">
-                                <span className="skill-name">{skill.name}</span>
-                                <span className="skill-percentage">{skill.percentage}%</span>
-                            </div>
-                            <div className="skill-progress-bar">
+                    <Swiper
+                        modules={[Autoplay, FreeMode]}
+                        spaceBetween={30}
+                        slidesPerView="auto"
+                        freeMode={true}
+                        loop={true}
+                        speed={3000}
+                        autoplay={{
+                            delay: 0,
+                            disableOnInteraction: false,
+                        }}
+                        className="skills-swiper"
+                    >
+                        {skills.map((skill, index) => (
+                            <SwiperSlide key={skill.name} style={{ width: 'auto' }}>
                                 <motion.div
-                                    className="skill-progress-fill"
-                                    initial={{ width: 0 }}
-                                    animate={
-                                        isInView
-                                            ? { width: `${skill.percentage}%` }
-                                            : { width: 0 }
-                                    }
-                                    transition={{
-                                        duration: 1,
-                                        delay: index * 0.1,
-                                        ease: "easeOut",
-                                    }}
-                                />
-                            </div>
-                        </motion.div>
-                    ))}
+                                    className="skill-item tech-skill-item"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                                >
+                                    <div className="skill-header">
+                                        <span className="skill-name">{skill.name}</span>
+                                    </div>
+                                </motion.div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </motion.div>
             ) : (
                 <motion.div
