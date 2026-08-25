@@ -85,7 +85,7 @@ const aboutMe : DevProfile = {
                     <motion.div className="floating-card" animate={{ y: [0, -10, 0], rotate: [0, 2, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
                         <div className="card-content">
                             <span className="card-icon">💻</span>
-                            <span className="card-text">Currently working in Threedos / starting my graduation project</span>
+                            <span className="card-text">Mandatory military service in Egypt, starting mid OCT, free until then.</span>
                         </div>
                     </motion.div>
 
