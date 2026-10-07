@@ -39,7 +39,30 @@ const Projects = () => {
                 whileInView="animate"
                 viewport={{ once: true }}
             >
-
+                <motion.a href="https://www.gr8nikstudios.com" target="_blank" rel="noopener noreferrer">
+                    <motion.div
+                        className="project-card"
+                        variants={fadeInUp}
+                        whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                    >
+                        <motion.div
+                            className="project-image"
+                            style={{ backgroundImage: "url('/projects/gr8nik.png')" }}
+                            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                        />
+                        <h3> GR8NIK Studios</h3>
+                        <p>
+                            Full-stack web application designed and developed end-to-end for GR8NIK Studios. Features session booking, vault access, automated studio services, and interactive multimedia integration.
+                        </p>
+                        <div className="project-tech">
+                            <span>Next.js</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Google APIs</span>
+                            <span>Stitch</span>
+                        </div>
+                    </motion.div>
+                </motion.a>
                 <motion.a href="https://github.com/omar-tarek-abdelfattah/personalPortfolio.git" target="_blank">
                     <motion.div
                         className="project-card"
